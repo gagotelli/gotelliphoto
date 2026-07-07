@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gerardo Gotelli, Photographer, Sydney</title>
+<meta name="description" content="Sydney based photographer. Portrait, event and lifestyle photography across NSW.">
+
+<!-- ============================================================
+     EDIT THESE FIRST (search for the word EDIT):
+     1. Brand name / wordmark
+     2. Email address  (mailto:)
+     3. Phone number
+     4. Instagram link is already set to @gagotelli
+     5. Swap the frame images: replace the empty <div class="frame__img">
+        blocks with <img src="your-photo.jpg" alt="...">
+     ============================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#141414;
+    --paper:#f4f4f2;
+    --paper-2:#eceae6;
+    --grey:#7c7a75;
+    --line:#d6d3cd;
+    --safelight:#c0392b;   /* darkroom safelight red, used sparingly */
+    --display:'Instrument Serif', Georgia, serif;
+    --body:'Inter', system-ui, sans-serif;
+    --mono:'Space Mono', ui-monospace, monospace;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+
+  html{scroll-behavior:smooth}
+
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+
+  a{color:inherit}
+
+  /* focus visibility */
+  a:focus-visible,button:focus-visible{
+    outline:2px solid var(--safelight);
+    outline-offset:3px;
+  }
+
+  /* ---------- header ---------- */
+  header{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:26px 0;border-bottom:1px solid var(--line);
+  }
+  .mark{
+    font-family:var(--mono);font-weight:700;letter-spacing:.28em;
+    font-size:13px;text-transform:uppercase;
+  }
+  nav a{
+    font-family:var(--mono);font-size:12px;letter-spacing:.12em;
+    text-transform:uppercase;text-decoration:none;color:var(--grey);
+    margin-left:22px;transition:color .2s;
+  }
+  nav a:hover{color:var(--ink)}
+  @media(max-width:560px){nav a:first-child{display:none}}
+
+  /* ---------- hero ---------- */
+  .hero{padding:88px 0 64px;animation:rise .8s ease both}
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+  .eyebrow{
+    font-family:var(--mono);font-size:12px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--grey);margin-bottom:26px;
+    display:flex;gap:12px;align-items:center;flex-wrap:wrap;
+  }
+  .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--safelight)}
+
+  .hero h1{
+    font-family:var(--display);font-weight:400;
+    font-size:clamp(56px,13vw,148px);line-height:.9;letter-spacing:-.01em;
+  }
+  .hero .lede{
+    font-family:var(--display);font-style:italic;
+    font-size:clamp(20px,3.2vw,30px);color:var(--grey);
+    max-width:600px;margin-top:28px;line-height:1.35;
+  }
+
+  /* ---------- instagram feed ---------- */
+  .sheet{padding:40px 0 8px}
+  .feed-frame{
+    border:2px solid var(--ink);
+    padding:2px;
+    background:var(--ink);
+    min-height:240px;            /* reserves space so layout does not jump on load */
+  }
+  behold-widget{display:block;--behold-loading-color:var(--paper-2)}
+  .feed-note{
+    font-family:var(--mono);font-size:12px;color:var(--paper);
+    text-align:center;padding:40px 20px;letter-spacing:.05em;
+  }
+  .feed-note a{color:var(--safelight)}
+
+  /* ---------- info ---------- */
+  section.block{padding:76px 0;border-top:1px solid var(--line)}
+  .label{
+    font-family:var(--mono);font-size:12px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--grey);margin-bottom:26px;
+  }
+  .split{display:grid;grid-template-columns:1fr 1.4fr;gap:56px;align-items:start}
+  @media(max-width:760px){.split{grid-template-columns:1fr;gap:26px}}
+
+  .block h2{
+    font-family:var(--display);font-weight:400;
+    font-size:clamp(30px,5vw,46px);line-height:1.05;letter-spacing:-.01em;
+  }
+  .block p{max-width:60ch;margin-bottom:16px;color:#333}
+
+  .services{list-style:none;display:grid;gap:0}
+  .services li{
+    display:flex;justify-content:space-between;align-items:baseline;
+    padding:16px 0;border-bottom:1px solid var(--line);
+  }
+  .services li span:first-child{font-weight:500}
+  .services li span:last-child{
+    font-family:var(--mono);font-size:12px;color:var(--grey);letter-spacing:.05em;
+  }
+
+  /* ---------- contact ---------- */
+  #contact{background:var(--ink);color:var(--paper)}
+  #contact .label{color:#8f8d88}
+  #contact h2{font-family:var(--display);font-size:clamp(40px,8vw,84px);line-height:.95;margin-bottom:40px}
+  .contacts{display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
+  @media(max-width:560px){.contacts{grid-template-columns:1fr}}
+  .contacts .ci .k{
+    font-family:var(--mono);font-size:11px;letter-spacing:.2em;
+    text-transform:uppercase;color:#8f8d88;margin-bottom:8px;
+  }
+  .contacts .ci a,.contacts .ci .v{
+    font-size:19px;text-decoration:none;color:var(--paper);
+    border-bottom:1px solid transparent;transition:border-color .2s;
+    word-break:break-word;
+  }
+  .contacts .ci a:hover{border-color:var(--safelight)}
+
+  /* ---------- footer ---------- */
+  footer{
+    padding:30px 0;display:flex;justify-content:space-between;
+    font-family:var(--mono);font-size:11px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--grey);flex-wrap:wrap;gap:10px;
+  }
+
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;scroll-behavior:auto}
+    .frame__exif{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header>
+    <div class="mark">GERARDO GOTELLI</div>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <div class="eyebrow">
+      <span class="dot"></span>
+      <span>Sydney, Australia</span>
+      <span>·</span>
+      <span>Film &amp; Digital</span>
+      <span>·</span>
+      <span>Est. 20 years</span>
+    </div>
+    <h1>GERARDO</h1>
+    <p class="lede">Portrait, event and lifestyle photography made in Sydney, available across NSW and wherever the story takes us.</p>
+  </div>
+
+</div>
+
+<!-- ===== LIVE INSTAGRAM FEED (Behold) =====
+     SETUP (one time, about 5 minutes):
+     1. Make sure @gotelliphoto is a Business or Creator account
+        (Instagram app: Settings > Account type and tools). Personal accounts
+        cannot connect since a 2024 Instagram change.
+     2. Go to behold.so and sign up free.
+     3. Add source, connect @gotelliphoto, grant all permissions.
+     4. Create a Widget feed, then open Embed Code.
+     5. Copy the feed-id from the code and paste it below where it says
+        YOUR_FEED_ID. That is the only change you need to make here.
+     Tip: styling (gap, corners, hover, columns) is set inside the Behold
+     dashboard, not in this file. Free plan shows up to 6 posts.
+-->
+<div class="wrap sheet" id="work">
+  <div class="feed-frame">
+    <behold-widget feed-id="oQaMDqmkvqZbfvIialaA"></behold-widget>
+    <noscript><p class="feed-note">Enable JavaScript to view the Instagram feed, or visit <a href="https://instagram.com/gotelliphoto">@gotelliphoto</a>.</p></noscript>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <section class="block" id="about">
+    <div class="split">
+      <div class="label">About</div>
+      <div>
+        <h2>Two decades behind the lens.</h2>
+        <p>I am a Sydney based photographer with over twenty years chasing light. My work sits between honest portraiture and the unscripted moments of an event, the kind of frames people come back to years later.</p>
+        <p>I shoot both film and digital, and I like keeping the process relaxed so the pictures feel like you, not a pose. Based in Sydney, happy to travel for the right project.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="split">
+      <div class="label">What I shoot</div>
+      <ul class="services">
+        <li><span>Portraits</span><span>Studio &amp; on location</span></li>
+        <li><span>Events</span><span>Weddings, functions, launches</span></li>
+        <li><span>Lifestyle &amp; brand</span><span>People, product, place</span></li>
+        <li><span>Sport &amp; action</span><span>Tennis, futsal, motorsport</span></li>
+      </ul>
+    </div>
+  </section>
+
+</div>
+
+<section class="block" id="contact">
+  <div class="wrap">
+    <div class="label">Get in touch</div>
+    <h2>Let's make<br>some pictures.</h2>
+    <div class="contacts">
+      <div class="ci">
+        <div class="k">Email</div>
+        <a href="mailto:gagotelli@gmail.com">gagotelli@gmail.com</a>
+      </div>
+      <div class="ci">
+        <div class="k">Phone</div>
+        <a href="tel:+61493178012">+61 493 178 012</a>
+      </div>
+      <div class="ci">
+        <div class="k">Instagram</div>
+        <a href="https://instagram.com/gotelliphoto" target="_blank" rel="noopener">@gotelliphoto</a>
+      </div>
+      <div class="ci">
+        <div class="k">Based in</div>
+        <span class="v">Sydney, NSW</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <footer>
+    <span>© <span id="yr"></span> Gerardo Gotelli Photography</span>
+    <span>Sydney · Australia</span>
+  </footer>
+</div>
+
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+
+<!-- Behold widget loader. Loads once, powers the feed above. Keep this. -->
+<script type="module" src="https://w.behold.so/widget.js"></script>
+
+</body>
+</html>
