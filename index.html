@@ -6,7 +6,7 @@
 <title>Gerardo Gotelli, Photographer, Sydney</title>
 <meta name="description" content="Sydney based photographer. Portrait, event and lifestyle photography across NSW.">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://w.behold.so; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https: data:; connect-src 'self' https:; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; font-src https: data:; img-src 'self' https: data:; media-src https:; connect-src 'self' https:; frame-src https:; object-src 'none'; base-uri 'self'; form-action 'self'">
 
 <!-- ============================================================
      EDIT THESE FIRST (search for the word EDIT):
@@ -111,7 +111,10 @@
     background:#101010;
     min-height:240px;            /* reserves space so layout does not jump on load */
   }
-  behold-widget{display:block;--behold-loading-color:var(--paper-2)}
+  #curator-feed-gotelliphoto-layout{display:block}
+  #curator-feed-gotelliphoto-layout .crt-logo{
+    font-family:var(--mono);font-size:11px;color:var(--paper-2);
+  }
   .feed-note{
     font-family:var(--mono);font-size:12px;color:var(--paper);
     text-align:center;padding:40px 20px;letter-spacing:.05em;
@@ -206,22 +209,10 @@
 
 </div>
 
-<!-- ===== LIVE INSTAGRAM FEED (Behold) =====
-     SETUP (one time, about 5 minutes):
-     1. Make sure @gotelliphoto is a Business or Creator account
-        (Instagram app: Settings > Account type and tools). Personal accounts
-        cannot connect since a 2024 Instagram change.
-     2. Go to behold.so and sign up free.
-     3. Add source, connect @gotelliphoto, grant all permissions.
-     4. Create a Widget feed, then open Embed Code.
-     5. Copy the feed-id from the code and paste it below where it says
-        YOUR_FEED_ID. That is the only change you need to make here.
-     Tip: styling (gap, corners, hover, columns) is set inside the Behold
-     dashboard, not in this file. Free plan shows up to 6 posts.
--->
+<!-- ===== LIVE INSTAGRAM FEED (Curator.io, feed: Gotelli Photo) ===== -->
 <div class="wrap sheet" id="work">
   <div class="feed-frame">
-    <behold-widget feed-id="oQaMDqmkvqZbfvIialaA"></behold-widget>
+    <div id="curator-feed-gotelliphoto-layout"><a href="https://curator.io" target="_blank" rel="noopener noreferrer" class="crt-logo crt-tag">Powered by Curator.io</a></div>
     <noscript><p class="feed-note">Enable JavaScript to view the Instagram feed, or visit <a href="https://instagram.com/gotelliphoto">@gotelliphoto</a>.</p></noscript>
   </div>
 </div>
@@ -292,8 +283,15 @@
 
 <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
 
-<!-- Behold widget loader. Loads once, powers the feed above. Keep this. -->
-<script type="module" src="https://w.behold.so/widget.js"></script>
+<!-- Curator.io feed loader. Powers the Instagram feed above. Keep this. -->
+<script type="text/javascript">
+/* curator-feed-gotelliphoto-layout */
+(function(){
+var i,e,d=document,s="script";i=d.createElement("script");i.async=1;i.charset="UTF-8";
+i.src="https://cdn.curator.io/published/8d7bb931-230a-46b8-af12-371253e935ef.js";
+e=d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
+})();
+</script>
 
 </body>
 </html>
