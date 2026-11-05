@@ -112,6 +112,13 @@
     min-height:240px;            /* reserves space so layout does not jump on load */
   }
   #curator-feed-gotelliphoto-layout{display:block}
+  /* photos only: hide captions, names, dates and icons from the Curator cards */
+  #curator-feed-gotelliphoto-layout .crt-post-header,
+  #curator-feed-gotelliphoto-layout .crt-post-text,
+  #curator-feed-gotelliphoto-layout .crt-post-footer,
+  #curator-feed-gotelliphoto-layout .crt-social-icon{display:none!important}
+  #curator-feed-gotelliphoto-layout .crt-post-c{border:0!important;background:transparent!important;padding:0!important}
+  #curator-feed-gotelliphoto-layout .crt-post{margin-left:4px!important;margin-right:4px!important;margin-bottom:8px!important}
   #curator-feed-gotelliphoto-layout .crt-logo{
     font-family:var(--mono);font-size:11px;color:var(--paper-2);
   }
